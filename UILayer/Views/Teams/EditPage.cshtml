@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>EDIT TEAM</h1>
+    <fieldset>
+        <form action="/Stadiums/SaveChanges">
+            <input type="text" name="name" required placeholder="Name" value="@ViewData["TeamName"]" pattern="^[0-9]+$">
+            <input type="text" name="league" required placeholder="League" value="@ViewData["TeamTier"]" pattern="^[0-9]+$">
+            <input type="submit" value="SAVE">
+        </form>
+    </fieldset>
+</div>

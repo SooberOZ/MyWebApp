@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+@using UILayer.Models
+@using UILayer.ViewModels
+@model GameViewModel
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>NEW GAME</h1>
+    <fieldset>
+        <form action="/Games/AddGame">
+            <input type="text" name="date" required placeholder="Date" pattern="^[a-zA-Z]+$">
+            <input type="text" name="spectators" required placeholder="Number of spectators" pattern="^[0-9]+$">
+            <select name="place">
+                @foreach (TeamModel stadium in Model.Teams)
+                {
+                    <option value="@stadium.Id">@stadium.Name</option>
+                }
+            </select>
+            <select name="result">
+                <option value="Won">Won</option>
+                <option value="Lose">Lose</option>
+                <option value="Draw">Draw</option>
+            </select>
+            <input type="submit" value="ADD">
+        </form>
+    </fieldset>
+</div>

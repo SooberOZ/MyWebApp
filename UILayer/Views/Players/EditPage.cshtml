@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>EDIT PLAYER</h1>
+    <fieldset>
+        <form action="/Players/SaveChanges">
+            @*/@ViewBag["ID"]*@
+            <input type="text" name="nickName" required placeholder="NickName" value="@ViewData["PlayerNickName"]" pattern="^[a-zA-Z]+$">
+            <input type="text" name="rank" required placeholder="Rank" value="@ViewData["PlayerRank"]" pattern="^[a-zA-Z]+$">
+            <input type="submit" value="SAVE">
+        </form>
+    </fieldset>
+</div>

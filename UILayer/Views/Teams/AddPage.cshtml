@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+<link rel="stylesheet" href="~/css/fields.css" media="screen" type="text/css" />
+
+<div id="login-form">
+    <h1>NEW TEAM</h1>
+    <fieldset>
+        <form action="/Team/AddTeam">
+            <input type="text" name="name" required placeholder="Name of Team" pattern="^[0-9]+$">
+            <input type="text" name="league" required placeholder="League" pattern="^[0-9]+$">
+            <input type="submit" value="ADD">
+        </form>
+    </fieldset>
+</div>

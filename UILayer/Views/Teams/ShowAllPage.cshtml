@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "/Views/Menu.cshtml";
+}
+@using UILayer.Models
+@model IEnumerable<TeamModel>
+<link rel="stylesheet" href="~/css/table.css" />
+
+<table class="table_dark">
+    <tr>
+        <th>Name</th>
+        <th>League</th>
+        <th>Edition</th>
+        <th>Deletion</th>
+    </tr>
+    @foreach (TeamModel team in Model)
+    {
+        <tr>
+            <td>@team.Name</td>
+            <td>@team.League</td>
+            <td>
+                <form action="/Stadiums/EditPage/@team.Id">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="/Stadiums/Delete/@team.Id">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    }
+</table>
